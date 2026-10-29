@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container-pai_entrada">
+    <div class="bolinhas bolinhas-entrada1"></div>
+    <div class="bolinhas bolinhas-entrada2"></div>
+
+    <main class="entrada-container_entrada">
+        <section class="entrada-card_entrada">
+            <div class="entrada-header_entrada">
+                <div class="entrada-icone_entrada">
+                    <i class="bi bi-inbox"></i>
+                </div>
+                <div>
+                    <h1 class="entrada-titulo_entrada">Entrada</h1>
+                </div>
+            </div>
+
+            <div class="entrada-tabela-container_entrada">
+                <table class="entrada-tabela_entrada">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Data de entrega</th>
+                            <th>Observações</th>
+                            <th>Quantidade</th>
+                            <th>Fornecedor</th>
+                            <th>Responsável pela<br>verificação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="entrada-numero_entrada">1</span></td>
+                            <td>15/05/2024<br><small>10:30</small></td>
+                            <td>Entrega realizada dentro do prazo</td>
+                            <td>12</td>
+                            <td><span class="entrada-fornecedor_entrada">International Paper</span></td>
+                            <td>Lucas Almeida</td>
+                            <td>
+                                <button class="entrada-acao_entrada" id="acao-1_entrada">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="entrada-numero_entrada">2</span></td>
+                            <td>15/05/2024<br><small>11:45</small></td>
+                            <td>Quantidade conferida e aprovada</td>
+                            <td>34</td>
+                            <td><span class="entrada-fornecedor_entrada">Suzano Papel e Celulose</span></td>
+                            <td>Mariana Oliveira</td>
+                            <td>
+                                <button class="entrada-acao_entrada" id="acao-2_entrada">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="entrada-numero_entrada">3</span></td>
+                            <td>15/05/2024<br><small>14:20</small></td>
+                            <td>Material recebido em perfeito estado</td>
+                            <td>56</td>
+                            <td><span class="entrada-fornecedor_entrada">Papel e Papel</span></td>
+                            <td>João Pereira</td>
+                            <td>
+                                <button class="entrada-acao_entrada" id="acao-3_entrada">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+{% endblock %}

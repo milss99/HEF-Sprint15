@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+<div class="container-pai">
+    <div class="bolinhas bolinhas1"></div>
+    <div class="bolinhas bolinhas2"></div>
+
+    <div class="d-flex align-items-center justify-content-center mt-1 mb-1 shadow-lg card-cad_funcionario">
+        <div class="card-cad_funcionario text-center">
+            <div class="text-center">
+                <i class="bi bi-person-badge"></i>
+            </div>
+            <h4 class="fw-semibold text-center mb-1">Cadastro de Funcionário</h4>
+            <p class="text-muted mb-3">Preencha as informações abaixo para cadastrar um novo Funcionário.</p>
+
+            <div class="linha">
+                <span></span>
+                <div class="ponto"></div>
+                <span></span>
+            </div>
+
+            <form method="POST" action="{{ url_for('funcionario_incluir') }}" id="card-cad_funcionario">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Nome</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-person"></i></span>
+                                <input type="text" name="nome_funcionario" id="nome_funcionario" class="form-control" placeholder="Insira o nome do Funcionário" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-envelope"></i></span>
+                                <input type="email" name="email_funcionario" id="email_funcionario" class="form-control" placeholder="Insira o Email do Funcionário" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">CPF</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-card-text"></i></span>
+                                <input type="text" name="cpf_funcionario" id="cpf_funcionario" class="form-control" placeholder="Insira o CPF do Funcionário" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Telefone</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-telephone"></i></span>
+                                <input type="tel" name="telefone_funcionario" id="telefone_funcionario" class="form-control" placeholder="Insira o telefone" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Cargo</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-briefcase"></i></span>
+                                <input type="text" name="cargo_funcionario" id="cargo_funcionario" class="form-control" placeholder="Insira o cargo" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Senha</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-lock"></i></span>
+                                <input type="password" name="senha_funcionario" id="senha_funcionario" class="form-control" placeholder="Crie uma senha" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-1">
+                    <button type="submit" class="btn btn-login text-white px-5">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

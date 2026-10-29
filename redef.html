@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container d-flex align-items-center justify-content-center login-container">
+    <div class="card_redef text-center">
+        <img src="{{ url_for('static', filename='images/Cadeado.png') }}" alt="logo" class="logo">
+        <h4 class="mb-3">Redefinir senha</h4>
+        <p class="text-black mb-4">Digite e confirme sua nova senha para continuar.</p>
+
+        <form>
+            <div class="mb-3 text-start">
+                <label class="form-label">Nova senha</label>
+                <div class="input-group senha-input">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    <input type="password" class="form-control" placeholder="Digite a nova senha" required>
+                    <span class="input-group-text"><i class="bi bi-eye"></i></span>
+                </div>
+            </div>
+
+            <div class="mb-3 text-start">
+                <label class="form-label">Confirmar senha</label>
+                <div class="input-group senha-input">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    <input type="password" class="form-control" placeholder="Confirme a senha" required>
+                    <span class="input-group-text"><i class="bi bi-eye"></i></span>
+                </div>
+            </div>
+
+            <button class="btn btn-login w-100 text-white mt-3">Salvar nova senha</button>
+        </form>
+
+        <div class="divisor"><span>ou</span></div>
+        <a href="{{ url_for('login') }}" class="voltar-login"><i class="bi bi-arrow-left"></i> Voltar para login</a>
+    </div>
+</div>
+{% endblock %}

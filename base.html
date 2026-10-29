@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hefesto's Stock</title>
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Fonte moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!--o sistema de grid/ estilos prontos (botões, formulários, etc.)/responsividade automática-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=20261020">
+
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+        <div class="logo-area">
+
+            <img src="../static/images/logo copy.png" alt="Logo Hefesto's Stock">
+        </div>
+
+
+        <!-- MENU -->
+        <nav class="menu">
+
+            <!-- MENU PRINCIPAL -->
+            <a href="{{ url_for('dashboard') }}" class="menu-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+
+            <!-- COMPRAS -->
+            <a href="{{url_for('rend_hist_compra')}}" class="menu-item">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Compras</span>
+            </a>
+
+
+            <!-- CONSULTA -->
+            <a href="{{ url_for('consulta_cliente') }}" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Consulta</span>
+            </a>
+
+            <!--MODELOS-->
+            <a href="{{url_for('modelos')}}" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Modelos</span>
+            </a>
+
+
+            <!-- ENTRADA -->
+            <a href="{{url_for('entrada')}}" class="menu-item">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <span>Entrada</span>
+            </a>
+
+
+            <!-- ENVIOS -->
+            <a href="{{url_for('rend_envio')}}" class="menu-item">
+                <i class="fa-solid fa-truck"></i>
+                <span>Envios</span>
+            </a>
+
+            <!-- PEDIDOS -->
+            <a href="{{ url_for('pedido_fornecedor') }}" class="menu-item">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Pedidos</span>
+            </a>
+
+            <!-- CADASTROS -->
+            <div class="menu-dropdown">
+
+                <div class="menu-item cadastro-btn" onclick="toggleCadastro()">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>Cadastros</span>
+
+                    <i class="fa-solid fa-chevron-down seta"></i>
+
+                </div>
+
+
+                <!-- SUBMENU -->
+                <div class="submenu" id="submenuCadastro">
+
+                    <a href="{{ url_for('funcionario') }}">
+                        <i class="fa-solid fa-user"></i>
+                        Funcionário
+                    </a>
+
+                    <a href="{{ url_for('cliente') }}">
+                        <i class="fa-solid fa-user-tie"></i>
+                        Cliente
+                    </a>
+
+                    <a href="{{ url_for('fornecedor') }}">
+                        <i class="fa-solid fa-building"></i>
+                        Fornecedor
+                    </a>
+
+                    <a href="{{ url_for('materia_prima') }}">
+                        <i class="fa-solid fa-cubes"></i>
+                        Matéria-prima
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- SAIR -->
+        <div class="sair">
+
+            <a href="{{url_for('logout')}}">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sair</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- MENU SUPERIOR -->
+        <header class="topbar">
+
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="topbar-right">
+
+                <i class="fa-regular fa-bell"></i>
+
+
+                <a href="{{url_for('rend_perfil')}}"><i class="fa-regular fa-circle-user"></i></a>
+
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTEÚDO -->
+        <section class="conteudo">
+
+
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                <p class="mensagem {{ category }}">{{ message }}</p>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
+            {% block conteudo %}{% endblock %}
+
+        </section>
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            sidebar.classList.toggle('fechado');
+            mainContent.classList.toggle('menu-fechado');
+        }
+
+        function toggleCadastro() {
+            const submenu = document.getElementById('submenuCadastro');
+            const seta = document.querySelector('.seta');
+            if (!submenu || !seta) return;
+            submenu.classList.toggle('ativo');
+            seta.classList.toggle('rotacionar');
+        }
+    </script>
+
+</body>
+
+</html>

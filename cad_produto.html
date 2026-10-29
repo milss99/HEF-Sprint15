@@ -1,0 +1,192 @@
+{%extends 'base.html'%}
+{%block conteudo%}
+    
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Fonte moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!--o sistema de grid/ estilos prontos (botões, formulários, etc.)/responsividade automática-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+    <!--Pai da seleção e formulário-->
+    <div class="container-pai">
+
+        <!--Bolinhas de Decoração nos cantos-->
+        <div class="bolinhas bolinhas1"></div>
+        <div class="bolinhas bolinhas2"></div>
+
+
+        <div class=" d-flex align-items-center justify-content-center mb-1 shadow-lg card-cad_cliente">
+            <div class="card-cad_cliente text-center">
+                <!--Produto icone-->
+                <div class="text-center">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+                <h4 class="mb-1">Cadastro de Produto</h4>
+                <p class="text-black mb-1">Preencha as informações abaixo
+                    para realizar o cadastro do Produto a ser adicionado.</p>
+
+                <div class="linha">
+                    <span></span>
+                    <div class="ponto"></div>
+                    <span></span>
+                </div>
+
+
+
+                <form method="POST" action="{{ url_for('produto_incluir') }}" id="card-cad_produto">
+                    <div class="row">
+
+                        <!-- Espaço da esquerda -->
+                        <div class="col-md-6">
+
+                            <div class="col-12 d-flex justify-content-center mt-4 mb-2">
+
+                                <label for="imagemProduto" class="upload-produto">
+
+                                    <div class="icone-upload">
+                                        <i class="bi bi-image"></i>
+                                    </div>
+
+                                    <span class="titulo-upload">
+                                        Adicione a imagem do produto
+                                    </span>
+
+                                    <small>
+                                        Clique para selecionar uma imagem
+                                    </small>
+
+                                    <img id="previewImagemProduto" class="foto-produto" style="display:none;">
+
+                                </label>
+
+                                <input type="file" id="imagemProduto" accept="image/*" hidden>
+                            </div>
+
+                        </div>
+
+                        <!--espaço da direita -->
+                        <div class="col-md-6">
+
+                            <div class="mb-2 text-start">
+                                <label class="form-label text-black">Nome</label>
+                                <div class="input-group">
+                                    <span class="input-group-text border-secondary">
+                                        <i class="bi bi-person"></i>
+                                    </span>
+                                    <input type="text" name="nomeProduto" id="nomeProduto" class="form-control"
+                                        placeholder="Insira o Nome aqui" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 text-start">
+                                <label class="form-label text-black">Código</label>
+                                <div class="input-group">
+                                    <span class="input-group-text border-secondary">
+                                        <i class="bi bi-lock"></i>
+                                    </span>
+                                    <input type="text" name="codigoProduto" id="codigoProduto" class="form-control"
+                                        placeholder="Insira o Código do produto aqui" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 text-start">
+                                <label class="form-label text-black">Dimensões</label>
+                                <div class="input-group">
+                                    <span class="input-group-text border-secondary">
+                                        <i class="bi bi-card-text"></i>
+                                    </span>
+                                    <input type="text" name="dimensoesProduto" id="dimensoesProduto"
+                                        class="form-control" placeholder="Insira as Dimensões do produto aqui" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-2 text-start">
+                                <label class="form-label text-black">Mínimo Produto</label>
+                                <div class="input-group">
+                                    <span class="input-group-text border-secondary">
+                                        <i class="bi bi-box"></i>
+                                    </span>
+                                    <input type="number" name="estoqueMinimo" id="estoqueMinimo" class="form-control"
+                                        placeholder="Insira o Mínimo de Produto aqui" required>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- botão -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-login text-white px-5">
+                            Cadastrar
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    <script>
+        // Espera o html carregar pra rodar e ñ da erro
+        document.addEventListener("DOMContentLoaded", function () {
+        
+            // Procura o input do tipo "file" pelo id "imagemProduto" e guarda esse elemento na variável "input"
+            const input = document.getElementById("imagemProduto");
+
+            // Procura a tag <img> pra mostrar a imagem escolhida pelo usuário
+            const preview = document.getElementById("previewImagemProduto");
+
+            // Procura a div que contém o ícone da imagem
+            const icone = document.querySelector(".icone-upload");
+
+            // Procura o título "Adicione a imagem do produto"
+            const titulo = document.querySelector(".titulo-upload");
+
+            // Procura o (<small>) dentro do card de upload
+            const texto = document.querySelector(".upload-produto small");
+        
+            // Sempre que o usuário selecionar uma imagem, esse código roda
+            input.addEventListener("change", function () {
+        
+                // Verifica se realmente existe um arquivo selecionado. Caso ñ exista, interrompe a execução
+                if (!this.files || !this.files[0]) return;
+        
+                // Cria um objeto FileReader. Ele serve para ler arquivos do computador (imagem, PDF, txt, etc.)
+                const reader = new FileReader();
+        
+                // Quando a leitura do arquivo terminar, esta função será executada
+                reader.onload = function (e) {
+        
+                    // Coloca a imagem carregada dentro da tag <img>
+                    preview.src = e.target.result;
+
+                    // Faz a imagem aparecer
+                    preview.style.display = "block";
+        
+                    // Esconde o ícone de imagem
+                    icone.style.display = "none";
+
+                    // Esconde o título
+                    titulo.style.display = "none";
+
+                    // Esconde o texto pequeno
+                    texto.style.display = "none";
+                };
+
+                // Lê o arquivo escolhido pelo usuário e transforma em uma URL temporária que pode ser exibida na página
+                reader.readAsDataURL(this.files[0]);
+        
+            });
+        
+        });
+        // Fecha a tag de JavaScript.
+        </script>
+{%endblock%}

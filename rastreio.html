@@ -1,0 +1,182 @@
+{%extends 'base.html'%}
+{%block conteudo%}
+
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Fonte moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!--o sistema de grid/ estilos prontos (botões, formulários, etc.)/responsividade automática-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+
+    <div class="container-pai_rastreio">
+
+        <!--Bolinhas de Decoração nos cantos-->
+        <div class="bolinhas bolinhas-rastreio1"></div>
+        <div class="bolinhas bolinhas-rastreio2"></div>
+
+        <!--Card branco-->
+        <div class="shadow-lg card-rastreio">
+
+            <div class="d-flex align-items-center">
+                <!-- LADO ESQUERDO -->
+                <div class="esquerda-rastreio ">
+                    <h1>Rastreio</h1>
+
+                    <div class="corvo-rastreio">
+                        <img src="../static/images/logo-rastreio.png" alt="">
+                    </div>
+
+                    <p><strong>Código de rastreio:</strong></p>
+                    <p class="codigo-rastreio">* * * * *</p>
+
+                    <div class="atualizacao-data">
+                        <i class="bi bi-calendar"></i>
+                        Última atualização em ___ / ___ às ___
+                    </div>
+                </div>
+
+                <!-- TIMELINE / Lado Direito -->
+                <div class="linha-do-tempo">
+
+                    <!-- etapas -->
+                    <div class="etapas">
+                        <div class="icon-box">
+                            <span><i class="bi bi-printer"></i></span>
+                        </div>
+
+                        <div class="data-rastreio">
+                            <strong>12 de mar</strong><br>11:04
+                        </div>
+
+                        <div class="line-rastreio">
+                            <span class="bolinha-rastreio"></span>
+                        </div>
+
+                        <div class="text-rastreio">
+                            <h3>Lote em impressão</h3>
+                            <p>Seu pacote foi processado</p>
+                        </div>
+
+                        <div class="localizacao-rastreio">
+                            <span><i class="bi bi-geo-alt"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- etapas -->
+                    <div class="etapas">
+                        <div class="icon-box">
+                            <span><i class="bi bi-truck"></i></span>
+                        </div>
+
+                        <div class="data-rastreio">
+                            <strong>12 de mar</strong><br>11:04
+                        </div>
+
+                        <div class="line-rastreio">
+                            <span class="bolinha-rastreio"></span>
+                        </div>
+
+                        <div class="text-rastreio">
+                            <h3>Em movimentação</h3>
+                            <p>Seu pacote está em trânsito</p>
+                        </div>
+
+                        <div class="localizacao-rastreio">
+                            <span><i class="bi bi-geo-alt"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- etapas -->
+                    <div class="etapas">
+                        <div class="icon-box">
+                            <span><i class="bi bi-box"></i></span>
+                        </div>
+
+                        <div class="data-rastreio">
+                            <strong>12 de mar</strong><br>11:04
+                        </div>
+
+                        <div class="line-rastreio">
+                            <span class="bolinha-rastreio"></span>
+                        </div>
+
+                        <div class="text-rastreio">
+                            <h3>Enviado</h3>
+                            <p>Objeto encaminhado</p>
+                        </div>
+
+                        <div class="localizacao-rastreio">
+                            <span><i class="bi bi-geo-alt"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- etapas -->
+                    <div class="etapas">
+                        <div class="icon-box">
+                            <span><i class="bi bi-box-seam"></i></span>
+                        </div>
+
+                        <div class="data-rastreio">
+                            <strong>12 de mar</strong><br>11:04
+                        </div>
+
+                        <div class="line-rastreio">
+                            <span class="bolinha-rastreio"></span>
+                        </div>
+
+                        <div class="text-rastreio">
+                            <h3>Saiu para entrega</h3>
+                            <p>Está chegando!</p>
+                        </div>
+
+                        <div class="localizacao-rastreio">
+                            <span><i class="bi bi-geo-alt"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- etapas -->
+                    <div class="etapas">
+                        <div class="icon-box">
+                            <span><i class="bi bi-check-circle"></i></span>
+                        </div>
+
+                        <div class="data-rastreio">
+                            <strong>12 de mar</strong><br>11:04
+                        </div>
+
+                        <div class="line-rastreio">
+                            <span class="bolinha-rastreio"></span>
+                        </div>
+
+                        <div class="text-rastreio">
+                            <h3>Entregue</h3>
+                            <p>Seu pacote foi entregue</p>
+                        </div>
+
+                        <div class="localizacao-rastreio">
+                            <span><i class="bi bi-geo-alt"></i></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS / caso algumas telas específicas precisem dele eu add em todas para evitar lemrar qual realmente PRECISA
+    Mas no geral serve pra Otimizar o layout da tela
+    É responsável pelos componentes que precisam de JavaScript para funcionar.
+    Por exemplo: Dropdown; Modal; Collapse; Navbar responsiva; Toast; Offcanvas; Carrossel; Tooltip; Popover -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+{%endblock%}

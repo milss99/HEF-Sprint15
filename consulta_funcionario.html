@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container-pai_pedido-cliente">
+  <div class="menu-pill" id="menu-pill-consulta-funcionario">
+    <ul class="nav nav-pills" id="nav-pills-consulta-funcionario">
+      <li class="nav-item" id="nav-item-consulta-funcionario">
+        <a class="nav-link" id="nav-link-consulta-funcionario" href="{{ url_for('consulta_cliente') }}">Cliente</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="nav-link-consulta-funcionario" href="{{ url_for('consulta_fornecedor') }}">Fornecedor</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link active" id="nav-link-consulta-funcionario-active" href="{{ url_for('consulta_funcionario') }}">Funcionário</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="nav-link-consulta-funcionario" href="{{ url_for('consulta_produtos') }}">Produto</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="search-wrapper">
+    <form class="search-form" method="GET">
+      <input type="text" placeholder="Buscar funcionário por nome, ID ou classificação...">
+      <button type="submit" aria-label="Buscar">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+  </div>
+
+  <div class="container bg-white mt-4 rounded-4 border p-4">
+    <h3 class="mb-3">Funcionário</h3>
+
+    <div class="card p-3">
+      <table class="table table-striped text-center table-success">
+        <thead class="thead-green-dark">
+          <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>CPF</th>
+            <th>Classificação</th>
+            <th>CEP</th>
+            <th>Foto</th>
+            <th>Número CLT</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Fernanda Ribeiro</td>
+            <td>2198877665</td>
+            <td>fernanda.ribeiro@fake.com</td>
+            <td>98765432100</td>
+            <td>Designer Gráfico</td>
+            <td>22041987</td>
+            <td>IMG002</td>
+            <td>CT2345678</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Ricardo Almeida</td>
+            <td>31999887766</td>
+            <td>ricardo.almeida@fake.com</td>
+            <td>4567891230</td>
+            <td>Auxiliar de Acabamento</td>
+            <td>30110888</td>
+            <td>IMG003</td>
+            <td>CT3456789</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Juliana Santos</td>
+            <td>41999112233</td>
+            <td>juliana.santos@fake.com</td>
+            <td>78901234599</td>
+            <td>Assistente Editorial</td>
+            <td>40020777</td>
+            <td>IMG004</td>
+            <td>CT4567890</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Paulo Moreira</td>
+            <td>51991223344</td>
+            <td>paulo.moreira@fake.com</td>
+            <td>23456789011</td>
+            <td>Operador de Guaranição</td>
+            <td>50030666</td>
+            <td>IMG005</td>
+            <td>CT5678901</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Eduardo Pacheco</td>
+            <td>71994445566</td>
+            <td>eduardo.pacheco@fake.com</td>
+            <td>34567890133</td>
+            <td>Supervisor de Produção</td>
+            <td>70050444</td>
+            <td>IMG007</td>
+            <td>CT7890123</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Marcos Nascimento</td>
+            <td>11987654321</td>
+            <td>marcos.nascimento@fake.com</td>
+            <td>12345678901</td>
+            <td>Operador de Impressão</td>
+            <td>01001999</td>
+            <td>IMG001</td>
+            <td>CT1234567</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

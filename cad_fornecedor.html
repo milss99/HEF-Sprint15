@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<link rel="stylesheet" href="../static/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+<div class="container-pai">
+    <div class="bolinhas bolinhas1"></div>
+    <div class="bolinhas bolinhas2"></div>
+
+    <div class="d-flex align-items-center justify-content-center mt-1 mb-1 shadow-lg card-cad_fornecedor">
+        <div class="card-cad_fornecedor text-center">
+            <div class="text-center">
+                <i class="bi bi-buildings"></i>
+            </div>
+            <h4 class="fw-semibold text-center mb-1">Cadastro de Fornecedor</h4>
+            <p class="text-muted mb-3">Preencha as informações abaixo para cadastrar um novo Fornecedor.</p>
+
+            <div class="linha">
+                <span></span>
+                <div class="ponto"></div>
+                <span></span>
+            </div>
+
+            <form method="POST" action="{{ url_for('cad_fornecedor') }}" id="card-cad_fornecedor">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Nome</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-person"></i></span>
+                                <input type="text" name="nome_fornecedor" id="nomefornecedor" class="form-control" placeholder="Insira seu Nome aqui" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-envelope"></i></span>
+                                <input type="email" name="email_fornecedor" id="emailfornecedor" class="form-control" placeholder="Insira seu Email aqui" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">CNPJ</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-card-text"></i></span>
+                                <input type="text" name="cnpj_fornecedor" id="cnpjfornecedor" class="form-control" placeholder="Insira seu CNPJ aqui">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Telefone</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-telephone"></i></span>
+                                <input type="tel" name="tel_fornecedor" id="telefone" class="form-control" placeholder="Insira aqui seu Telefone" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">CEP</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-geo-alt"></i></span>
+                                <input type="text" id="cep_fornecedor" name="cep_fornecedor" class="form-control" placeholder="Insira seu CEP aqui" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Fornecendo</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-truck"></i></span>
+                                <input type="text" id="materia_prima_fornecedor" name="materia_prima_fornecedor" class="form-control" placeholder="Insira o Item a ser Fornecido aqui" required>
+                            </div>
+                        </div>
+
+                        <div id="fornecedor_ativo">
+                            <label for="fornecedorAtivo">Fornecedor Ativo?</label>
+                            <input type="checkbox" name="ativado_fornecedor" id="fornecedorAtivo" value="0" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-1">
+                    <button type="submit" class="btn btn-login text-white px-5">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

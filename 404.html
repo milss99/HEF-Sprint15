@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Erro 404 | Hefesto's Stock</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+
+<body class="body_404">
+
+    
+   
+    </header>
+
+
+
+    <main class="container conteudo_404">
+
+        <div class="erro-card_404">
+
+            <div class="row align-items-center g-0">
+
+                <!-- parte da imagem -->
+                <div class="col-md-6 lado-ilustracao_404">
+
+                    <div class="ilustracao_404">
+
+                        <img src="../static/images/Img404.png"
+                            alt="Página não encontrada">
+
+                    </div>
+
+                </div>
+
+
+                
+                <div class="col-md-6 lado-texto_404">
+
+                    <div class="conteudo-texto_404">
+
+                        <h1 class="numero_404">
+                            404
+                        </h1>
+
+                        <h2 class="titulo_404">
+                            Página não encontrada
+                        </h2>
+
+
+                        <div class="linha-divisoria_404">
+
+                            <span></span>
+
+                        </div>
+
+
+                        <p class="descricao_404">
+
+                            Ops! A página que você está procurando
+                            não existe ou foi movida.
+
+                        </p>
+
+                        <p class="descricao-secundaria_404">
+
+                            Verifique o endereço ou volte para o início.
+
+                        </p>
+
+
+                        
+                        <a href="{{ url_for('dashboard') }}"
+                            class="btn btn-inicio_404">
+
+                            <i class="bi bi-house-door"></i>
+
+                            Ir para o início
+
+                        </a>
+
+
+                        
+                        <a href="{{ url_for('dashboard') }}"
+                            class="btn btn-voltar_404">
+
+                            <i class="bi bi-arrow-left"></i>
+
+                            Voltar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="footer_404">
+
+        <span>Hefesto's Stock</span>
+
+        <span class="ponto_404">•</span>
+
+        <span>Sistema de Gestão de Estoque</span>
+
+    </footer>
+
+
+</body>
+
+</html>

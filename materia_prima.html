@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container-pai_materia-prima">
+    <div class="card-branco">
+        <div class="topo-card">
+            <h1>Matéria-Prima</h1>
+            <div class="pesquisa-area_materia-prima">
+                <input type="text" class="pesquisa_materia-prima" placeholder="Pesquisar">
+                <button class="btn-filtro">Filtro</button>
+            </div>
+        </div>
+
+        <div class="tabela_materia-prima">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Matéria-prima</th>
+                        <th>Fornecedor</th>
+                        <th>Estoque mínimo</th>
+                        <th>Estoque</th>
+                        <th>D. última reposição</th>
+                        <th>D. validade</th>
+                        <th>Descrição</th>
+                        <th>Localização</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Papel offset</td>
+                        <td>15</td>
+                        <td>100</td>
+                        <td>1000</td>
+                        <td>2026-4-15</td>
+                        <td>2028-5-30</td>
+                        <td>Papel utilizado para impressão de páginas internas</td>
+                        <td>Rua A1, andar 01, número 01</td>
+                        <td>
+                            <div class="status">
+                                <button class="switch" onclick="mudarStatus(this)"><span></span></button>
+                                <p>Inativo</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Papel offset</td>
+                        <td>15</td>
+                        <td>100</td>
+                        <td>1000</td>
+                        <td>2026-4-15</td>
+                        <td>2028-5-30</td>
+                        <td>Papel utilizado para impressão de páginas internas</td>
+                        <td>Rua A1, andar 01, número 01</td>
+                        <td>
+                            <div class="status">
+                                <button class="switch" onclick="mudarStatus(this)"><span></span></button>
+                                <p>Inativo</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Papel offset</td>
+                        <td>15</td>
+                        <td>100</td>
+                        <td>1000</td>
+                        <td>2026-4-15</td>
+                        <td>2028-5-30</td>
+                        <td>Papel utilizado para impressão de páginas internas</td>
+                        <td>Rua A1, andar 01, número 01</td>
+                        <td>
+                            <div class="status">
+                                <button class="switch" onclick="mudarStatus(this)"><span></span></button>
+                                <p>Inativo</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="botoes">
+            <button class="btn-cadastrar">+ Cadastrar Novo</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function mudarStatus(botao) {
+        let texto = botao.nextElementSibling;
+        botao.classList.toggle("ativo");
+        texto.innerText = botao.classList.contains("ativo") ? "Ativo" : "Inativo";
+    }
+</script>
+{% endblock %}

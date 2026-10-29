@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container-pai_pedido-cliente">
+  <div class="menu-pill" id="menu-pill-consulta_cliente">
+    <ul class="nav nav-pills" id="nav-pill-consulta_cliente">
+      <li class="nav-item" id="nav-item-consulta_cliente">
+        <a class="nav-link active" id="nav-link-consulta_cliente_active" href="{{ url_for('consulta_cliente') }}">Cliente</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="nav-link-consulta_cliente" href="{{ url_for('consulta_fornecedor') }}">Fornecedor</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="nav-link-consulta_cliente" href="{{ url_for('consulta_funcionario') }}">Funcionário</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="nav-link-consulta_cliente" href="{{ url_for('consulta_produtos') }}">Produto</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="search-wrapper">
+    <form class="search-form" method="GET" action="{{ url_for('procurar_cliente') }}">
+      <input type="text" placeholder="Buscar cliente por nome, CNPJ ou e-mail...">
+      <button type="submit" aria-label="Buscar">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+  </div>
+
+  <div class="container bg-white mt-4 rounded-4 border p-4">
+    <h3 class="mb-3">Clientes</h3>
+
+    <div class="card p-3">
+      <table class="table table-striped text-center table-success">
+        <thead class="thead-green-dark">
+          <tr>
+            <th>ID</th>
+            <th>Nome Empresa</th>
+            <th>CNPJ</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>CEP</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+       
+        <tbody>
+          {%for clientes in cliente%}
+          <tr>
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.cnpj}}</td>
+            <td>{{cliente.tel}}</td>
+            <td>{{cliente.cep}}</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm"> <a href="{{url_for('atualizar_cadcli')}}">Editar</a> </button>
+              <button class="btn btn-danger btn-sm"> <a href="">Excluir</a></button>
+            </td>
+          </tr>
+
+         
+
+          {%endfor%}
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

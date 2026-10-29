@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<main class="container-pai_historico-vendas">
+    <div class="container_historico-vendas">
+        <header class="header_historico-vendas">
+            <div class="titulo-area_historico-vendas">
+                <div class="icone_historico-vendas">
+                    <i class="bi bi-graph-up-arrow"></i>
+                </div>
+                <div>
+                    <h1 class="titulo_historico-vendas">
+                        Histórico de Vendas
+                    </h1>
+                    <p class="subtitulo_historico-vendas">
+                        Acompanhe todas as vendas realizadas
+                    </p>
+                </div>
+            </div>
+
+            <div class="filtros_historico-vendas">
+                <div class="filtro_historico-vendas">
+                    <i class="bi bi-calendar3"></i>
+                    <input type="text" id="filtro-periodo_historico-vendas" placeholder="Período">
+                </div>
+
+                <div class="filtro-select_historico-vendas">
+                    <select id="filtro-cliente_historico-vendas">
+                        <option selected>Todos os clientes</option>
+                        <option>Cliente 1</option>
+                        <option>Cliente 2</option>
+                    </select>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <section class="tabela-card_historico-vendas">
+            <div class="tabela-container_historico-vendas">
+                <table class="tabela_historico-vendas">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Data Entrega</th>
+                            <th>Data Realização</th>
+                            <th>Valor Total</th>
+                            <th>Valor Unitário</th>
+                            <th>Item</th>
+                            <th>Quantidade</th>
+                            <th>Observação</th>
+                            <th>Cliente</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>02/03/2026<br><span>10:30</span></td>
+                            <td>25/02/2026</td>
+                            <td>R$ 5.000,00</td>
+                            <td>R$ 100,00</td>
+                            <td>Papel offset<br>90g (resma)</td>
+                            <td>50</td>
+                            <td>Entrega dentro<br>do prazo</td>
+                            <td>Cliente 1</td>
+                            <td><span class="status_historico-vendas status-concluido_historico-vendas">Concluído</span></td>
+                            <td>
+                                <button type="button" class="acao_historico-vendas" id="acao-venda-1_historico-vendas">
+                                    <i class="bi bi-three-dots"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>06/03/2026<br><span>14:15</span></td>
+                            <td>28/02/2026</td>
+                            <td>R$ 3.200,00</td>
+                            <td>R$ 80,00</td>
+                            <td>Papel couchê<br>150g (resma)</td>
+                            <td>40</td>
+                            <td>Material em<br>perfeito estado</td>
+                            <td>Cliente 2</td>
+                            <td><span class="status_historico-vendas status-concluido_historico-vendas">Concluído</span></td>
+                            <td>
+                                <button type="button" class="acao_historico-vendas" id="acao-venda-2_historico-vendas">
+                                    <i class="bi bi-three-dots"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R$ 150,00</td>
+                            <td>-</td>
+                            <td>Jóbson</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>Cliente 3</td>
+                            <td><span class="status_historico-vendas status-pendente_historico-vendas">Pendente</span></td>
+                            <td>
+                                <button type="button" class="acao_historico-vendas" id="acao-venda-3_historico-vendas">
+                                    <i class="bi bi-three-dots"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R$ 200,00</td>
+                            <td>-</td>
+                            <td>Mário</td>
+                            <td>10</td>
+                            <td>12</td>
+                            <td>Cliente 4</td>
+                            <td><span class="status_historico-vendas status-andamento_historico-vendas">Em andamento</span></td>
+                            <td>
+                                <button type="button" class="acao_historico-vendas" id="acao-venda-4_historico-vendas">
+                                    <i class="bi bi-three-dots"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}

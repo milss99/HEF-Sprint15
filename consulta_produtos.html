@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container-pai_pedido-cliente">
+  <div class="menu-pill" id="menu-pill-consulta-produtos">
+    <ul class="nav nav-pills" id="nav-pills-consulta-produtos">
+      <li class="nav-item" id="nav-item-consulta-produtos">
+        <a class="nav-link" id="nav-link-consulta-produtos" href="{{ url_for('consulta_cliente') }}">Cliente</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="nav-link-consulta-produtos" href="{{ url_for('consulta_fornecedor') }}">Fornecedor</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="nav-link-consulta-produtos" href="{{ url_for('consulta_funcionario') }}">Funcionário</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link active" id="nav-link-consulta-produtos-activate" href="{{ url_for('consulta_produtos') }}">Produto</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="search-wrapper">
+    <form class="search-form" method="GET">
+      <input type="text" placeholder="Buscar produto por nome ou dimensão...">
+      <button type="submit" aria-label="Buscar">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+  </div>
+
+  <div class="container bg-white mt-4 rounded-4 border p-4">
+    <h3 class="mb-3">Produtos</h3>
+
+    <div class="card p-3">
+      <table class="table table-striped text-center table-success">
+        <thead class="thead-green-dark">
+          <tr>
+            <th>Nome</th>
+            <th>Dimensões</th>
+            <th>Imagem</th>
+            <th>Mínimo</th>
+            <th>O que vai</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Livro Capa Dura A5</td>
+            <td>14,8 x 21 cm</td>
+            <td>imagem_capa_dura_a5.jpg</td>
+            <td>100</td>
+            <td>Capa dura, papel offset 90g, 200 páginas, impressão colorida, lombada quadrada</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Livro Brochura A4</td>
+            <td>21 x 29,7 cm</td>
+            <td>imagem_brochura_a4.jpg</td>
+            <td>200</td>
+            <td>Capa flexível, papel couché 115g, 100 páginas, impressão colorida</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

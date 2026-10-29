@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container-pai_pedido-cliente">
+  <div class="menu-pill" id="menu-pill-consulta_fornecedor">
+    <ul class="nav nav-pills" id="nav-pills-consulta_fornecedor">
+      <li class="nav-item" id="nav-item-consulta_fornecedor">
+        <a class="nav-link" id="nav-link-consulta_fornecedor" href="{{ url_for('consulta_cliente') }}">Cliente</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link active" id="nav-link-consulta-fornecedor-active" href="{{ url_for('consulta_fornecedor') }}">Fornecedor</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="nav-link-consulta_fornecedor" href="{{ url_for('consulta_funcionario') }}">Funcionário</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="nav-link-consulta_fornecedor" href="{{ url_for('consulta_produtos') }}">Produto</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="search-wrapper">
+    <form class="search-form" method="GET">
+      <input type="text" placeholder="Buscar fornecedor por nome, CNPJ ou matéria-prima...">
+      <button type="submit" aria-label="Buscar">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+  </div>
+
+  <div class="container bg-white mt-4 rounded-4 border p-4">
+    <h3 class="mb-3">Fornecedores</h3>
+
+    <div class="card p-3">
+      <table class="table table-striped text-center table-success">
+        <thead class="thead-green-dark">
+          <tr>
+            <th>Nome Empresa</th>
+            <th>CNPJ</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>CEP</th>
+            <th>Matéria-prima</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Papelaria Alfa Ltda</td>
+            <td>12345678000190</td>
+            <td>contato@papelariaalfa.com.br</td>
+            <td>1123456789</td>
+            <td>01001000</td>
+            <td>Papel offset</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Tintas Brasil S.A</td>
+            <td>23456789000101</td>
+            <td>vendas@tintasbrasil.com.br</td>
+            <td>2134567890</td>
+            <td>20040002</td>
+            <td>Papel couchê</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Suprimentos Gráficos Rio</td>
+            <td>34567890000112</td>
+            <td>atendimento@sgrio.com.br</td>
+            <td>2125678901</td>
+            <td>20211030</td>
+            <td>Papel reciclado</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Encadernadora Premium BR</td>
+            <td>67890123000156</td>
+            <td>atendimento@premiumbr.com</td>
+            <td>41999112233</td>
+            <td>40020777</td>
+            <td>Tintas CMYK</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Embalagens Premium Ltda</td>
+            <td>45678901000123</td>
+            <td>contato@embalagenspremium.com</td>
+            <td>3136789012</td>
+            <td>30140110</td>
+            <td>Verniz</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Bobinas & Cia</td>
+            <td>56789012000134</td>
+            <td>vendas@bobinasecia.com.br</td>
+            <td>4147890123</td>
+            <td>80010000</td>
+            <td>Cola</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Química Print</td>
+            <td>67890123000145</td>
+            <td>suporte@quimicaprint.com.br</td>
+            <td>1958901234</td>
+            <td>13010050</td>
+            <td>Solventes</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Papéis Nacionais Ltda</td>
+            <td>78901234000156</td>
+            <td>comercial@papeisnacionais.com.br</td>
+            <td>5160123456</td>
+            <td>90010150</td>
+            <td>Bobinas de papel</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Gráfica Insumos Brasil</td>
+            <td>89012345000167</td>
+            <td>contato@insumosbrasil.com.br</td>
+            <td>6171234567</td>
+            <td>70040010</td>
+            <td>Papelão</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Tintas & Vernizes Pro</td>
+            <td>90123456000178</td>
+            <td>vendas@tintaspro.com.br</td>
+            <td>7182345678</td>
+            <td>40020000</td>
+            <td>Plástico para Embalagens</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <button class="btn btn-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container-pai">
+    <div class="bolinhas bolinhas1"></div>
+    <div class="bolinhas bolinhas2"></div>
+
+    <div class="d-flex align-items-center justify-content-center mt-1 mb-1 shadow-lg card-materia-prima">
+        <div class="card-materia-prima text-center">
+            <div class="text-center">
+                <i class="bi bi-box-seam-fill"></i>
+            </div>
+            <h4 class="fw-semibold text-center mb-1">Cadastro de Matéria Prima</h4>
+            <p class="text-muted mb-3">Preencha as informações abaixo para registrar uma nova matéria-prima.</p>
+
+            <div class="linha">
+                <span></span>
+                <div class="ponto"></div>
+                <span></span>
+            </div>
+
+            <form method="POST" action="{{ url_for('material_incluir') }}" id="card-cad_materiais">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Nome</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-box"></i></span>
+                                <input type="text" name="nome_materia_prima" id="nome_materia_prima" class="form-control" placeholder="Insira o nome da matéria-prima" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Tipo</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-tags"></i></span>
+                                <input type="text" name="tipo_materia_prima" id="tipo_materia_prima" class="form-control" placeholder="Insira o tipo" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Quantidade</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-123"></i></span>
+                                <input type="number" name="quantidade_materia_prima" id="quantidade_materia_prima" class="form-control" placeholder="Informe a quantidade" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Fornecedor</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary"><i class="bi bi-truck"></i></span>
+                                <input type="text" name="pedido_fornecedor_id" id="pedido_fornecedor_id" class="form-control" placeholder="Insira o fornecedor" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-1">
+                    <button type="submit" class="btn btn-login text-white px-5">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

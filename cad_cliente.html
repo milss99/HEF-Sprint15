@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<!--Pai da seleção e formulário-->
+<div class="container-pai">
+
+    <!--Bolinhas de Decoração nos cantos-->
+    <div class="bolinhas bolinhas1"></div>
+    <div class="bolinhas bolinhas2"></div>
+
+
+
+    <div class=" d-flex align-items-center justify-content-center mt-3 mb-2 shadow-lg card-cad_cliente">
+        <div class="card-cad_cliente text-center">
+            <!--Pessoa-->
+            <div class="text-center">
+                <i class="bi bi-person-circle"></i>
+            </div>
+            <h4 class="mb-2">Cadastro de Cliente</h4>
+            <p class="text-black mb-2">Preencha as informações abaixo
+                para realizar o cadastro do cliente.</p>
+
+            <div class="linha">
+                <span></span>
+                <div class="ponto"></div>
+                <span></span>
+            </div>
+
+            <form method="POST" action="{{ url_for('cliente_incluir') }}" id="card-cad_cliente">
+                <div class="row">
+
+                    <!-- espaço da esquerda -->
+                    <div class="col-md-6">
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Nome</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary">
+                                    <i class="bi bi-person"></i>
+                                </span>
+                                <input type="text" name="nome_cliente" id="nome_cliente" class="form-control"
+                                    placeholder="Insira o nome da empresa aqui" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Endereço(CEP)</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary">
+                                    <i class="bi bi-card-text"></i>
+                                </span>
+                                <input type="text" name="cep_cliente" id="cep_cliente" class="form-control"
+                                    placeholder="Insira seu CEP aqui" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Telefone</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary">
+                                    <i class="bi bi-telephone"></i>
+                                </span>
+                                <input type="tel" name="tel_cliente" id="tel_cliente" class="form-control"
+                                    placeholder="Insira aqui seu telefone" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--espaço da direita -->
+                    <div class="col-md-6">
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary">
+                                    <i class="bi bi-envelope"></i>
+                                </span>
+                                <input type="email" name="email_cliente" id="email_cliente" class="form-control"
+                                    placeholder="Insira o email da empresa aqui" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-black">CNPJ</label>
+                            <div class="input-group">
+                                <span class="input-group-text border-secondary">
+                                    <i class="bi bi-card-text"></i>
+                                </span>
+                                <input type="text" name="cnpj_cliente" id="cnpj_cliente" class="form-control"
+                                    placeholder="Insira seu CNPJ aqui">
+                            </div>
+                        </div>
+
+                        <div>
+
+
+                            <div class="form-check mb-5 text-start">
+                                <input class="form-check-input" type="checkbox" value="0" id="checkChecked" >
+                                <label class="form-check-label" for="checkChecked">
+                                  *Cliente Inativo
+                                </label>
+                            </div>
+        
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- botão -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-login text-white px-5">
+                        Cadastrar
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    {% endblock %}
