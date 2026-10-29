@@ -1,0 +1,170 @@
+/*------------------------------- Login -----------------------------------------------------------------------------------------------*/
+.container-pai_login {
+    background-image: url('./images/img_sem_fundo.jpg');
+    background-size: cover;        /* cobre toda a tela */
+    background-position: center;   /* centraliza */
+    background-repeat: no-repeat;  /* evita repetição */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:  #8c130f
+}
+
+/*card branco e bege*/
+.container-pai_login .card-login {
+    display: flex;
+    width: 900px;
+    height: 500px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden; 
+}
+
+/*-----------------parte esquerda do card-------------------*/
+.container-pai_login .esquerda-login {
+    width: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-pai_login .esquerda-login img {
+    width: 70%;
+}
+
+/*--------------parte direita do card------------------*/
+.container-pai_login .direita-login {
+    width: 50%;
+    background-color: #dcd2cf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.titulo-login {
+    margin-bottom: 45px;
+}
+
+.titulo-login h2 {
+    margin: 0;
+    font-size: 46px;
+    font-weight: 800;
+    color: #8c130f;
+    letter-spacing: -1px;
+}
+
+.titulo-login span {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #a81720;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* campos */
+.container-pai_login .campos-login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.container-pai_login .campo label {
+    margin-top: 8px;
+    display: block;
+    margin-bottom: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #252322;
+}
+
+/* área do input */
+.container-pai_login .input-wrapper {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #d5c0bb;
+    border-radius: 9px;
+    background: #ffffff;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+/* ícone */
+.container-pai_login .input-wrapper  i {
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8c130f;
+    font-size: 18px;
+}
+
+/* input */
+.container-pai_login .input-wrapper input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 12px 0 2px;
+    background: transparent;
+    color: #333;
+    font-size: 14px;
+}
+
+/* placeholder */
+.container-pai_login .input-wrapper input::placeholder {
+    color: #aaa4a2;
+}
+
+/* foco */
+.container-pai_login .input-wrapper:focus-within {
+    border-color: #8b0000;
+    box-shadow:
+        0 0 0 3px rgba(139, 0, 0, 0.08);
+}
+
+/* botão do card */
+.container-pai_login .btn.btn-login {
+    width: 50%;
+    height: 45px;
+    background-color: #8c130f;
+    color: white;
+    border-radius: 50px;
+    margin-top: 10px;
+
+    align-self: center;
+
+    transition: 0.2s ease;
+
+}
+
+.container-pai_login .btn.btn-login:hover {
+    color: #fff;
+    background-color: #600e0b;
+    border-color: #600e0b;
+    transform: scale(1.05);
+
+}
+
+/*esqueci minha senha*/
+.container-pai_login .esqueci_senha {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #8c130f;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.4s ease;
+
+}
+
+.container-pai_login .esqueci_senha:hover {
+    font-size: 15px;
+    transform: scale(1.0);
+}
